@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		0822E48A24BB67DB00E26789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0822E48824BB67DB00E26789 /* Main.storyboard */; };
 		0822E48C24BB67DD00E26789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0822E48B24BB67DD00E26789 /* Assets.xcassets */; };
 		0822E48F24BB67DD00E26789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0822E48D24BB67DD00E26789 /* LaunchScreen.storyboard */; };
+		08E2406724BB6C3A00FB6193 /* TracksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2406624BB6C3A00FB6193 /* TracksAPI.swift */; };
+		08E2406924BB6CE600FB6193 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2406824BB6CE600FB6193 /* Track.swift */; };
+		08E2406C24BB70B900FB6193 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2406A24BB70B900FB6193 /* TrackTableViewCell.swift */; };
+		08E2406D24BB70B900FB6193 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E2406B24BB70B900FB6193 /* TrackTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		0822E48B24BB67DD00E26789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0822E48E24BB67DD00E26789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0822E49024BB67DD00E26789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08E2406624BB6C3A00FB6193 /* TracksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksAPI.swift; sourceTree = "<group>"; };
+		08E2406824BB6CE600FB6193 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		08E2406A24BB70B900FB6193 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		08E2406B24BB70B900FB6193 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			children = (
 				0822E48124BB67DB00E26789 /* itunes-demo-test */,
 				0822E48024BB67DB00E26789 /* Products */,
+				093F8532B3F82FEAA8406F18 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +68,23 @@
 				0822E48224BB67DB00E26789 /* AppDelegate.swift */,
 				0822E48424BB67DB00E26789 /* SceneDelegate.swift */,
 				0822E48624BB67DB00E26789 /* ViewController.swift */,
+				08E2406824BB6CE600FB6193 /* Track.swift */,
+				08E2406624BB6C3A00FB6193 /* TracksAPI.swift */,
 				0822E48824BB67DB00E26789 /* Main.storyboard */,
 				0822E48B24BB67DD00E26789 /* Assets.xcassets */,
 				0822E48D24BB67DD00E26789 /* LaunchScreen.storyboard */,
 				0822E49024BB67DD00E26789 /* Info.plist */,
+				08E2406A24BB70B900FB6193 /* TrackTableViewCell.swift */,
+				08E2406B24BB70B900FB6193 /* TrackTableViewCell.xib */,
 			);
 			path = "itunes-demo-test";
+			sourceTree = "<group>";
+		};
+		093F8532B3F82FEAA8406F18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +148,7 @@
 				0822E48F24BB67DD00E26789 /* LaunchScreen.storyboard in Resources */,
 				0822E48C24BB67DD00E26789 /* Assets.xcassets in Resources */,
 				0822E48A24BB67DB00E26789 /* Main.storyboard in Resources */,
+				08E2406D24BB70B900FB6193 /* TrackTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E2406724BB6C3A00FB6193 /* TracksAPI.swift in Sources */,
+				08E2406C24BB70B900FB6193 /* TrackTableViewCell.swift in Sources */,
+				08E2406924BB6CE600FB6193 /* Track.swift in Sources */,
 				0822E48724BB67DB00E26789 /* ViewController.swift in Sources */,
 				0822E48324BB67DB00E26789 /* AppDelegate.swift in Sources */,
 				0822E48524BB67DB00E26789 /* SceneDelegate.swift in Sources */,
