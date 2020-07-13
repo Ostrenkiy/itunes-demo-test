@@ -8,13 +8,48 @@
 
 import Foundation
 import UIKit
+import Alamofire
+
+typealias CancellationToken = () -> Void
 
 class TracksAPI {
-    func getTracks(query: String) -> [Track] {
-        return [
-            Track(image: UIImage(named: "cover1")!, title: "Track 1", artist: "Imagine Dragons"),
-            Track(image: UIImage(named: "cover2")!, title: "Track 2", artist: "Imagine Dragons"),
-            Track(image: UIImage(named: "cover3")!, title: "Track 3", artist: "Imagine Dragons feat. Somebody")
+    let url = "https://itunes.apple.com/search"
+    var isCancelled = false
+
+    func getTracks(query: String, completion: @escaping ([Track]) -> Void) -> CancellationToken {
+        print("entered getTracks")
+        let params: Parameters = [
+            "term": query,
+            "media": "music"
         ]
+
+        isCancelled = false
+        let request = AF.request(
+            url,
+            method: .get,
+            parameters: params,
+            encoding: URLEncoding.default,
+            headers: nil,
+            interceptor: nil,
+            requestModifier: nil
+        ).responseDecodable(of: TracksResponse.self) { [weak self] response in
+            guard let self = self, !self.isCancelled else {
+                return
+            }
+            
+            switch response.result {
+            case .failure(let error):
+                print(error)
+            case .success(let tracks):
+                print("success on request")
+                completion(tracks.results)
+            }
+        }
+
+        return {
+            print("cancelled request \(request)")
+            self.isCancelled = true
+            request.cancel()
+        }
     }
 }

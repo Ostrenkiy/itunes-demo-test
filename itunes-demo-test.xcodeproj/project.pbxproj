@@ -17,6 +17,7 @@
 		08E2406924BB6CE600FB6193 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2406824BB6CE600FB6193 /* Track.swift */; };
 		08E2406C24BB70B900FB6193 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E2406A24BB70B900FB6193 /* TrackTableViewCell.swift */; };
 		08E2406D24BB70B900FB6193 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E2406B24BB70B900FB6193 /* TrackTableViewCell.xib */; };
+		1A4239D1C610519A422C8D60 /* Pods_itunes_demo_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEC250A2A4480AB89C2A669 /* Pods_itunes_demo_test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		08E2406824BB6CE600FB6193 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		08E2406A24BB70B900FB6193 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		08E2406B24BB70B900FB6193 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
+		4FEC250A2A4480AB89C2A669 /* Pods_itunes_demo_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunes_demo_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B3E74DC9D1F20FE4C15815 /* Pods-itunes-demo-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunes-demo-test.debug.xcconfig"; path = "Target Support Files/Pods-itunes-demo-test/Pods-itunes-demo-test.debug.xcconfig"; sourceTree = "<group>"; };
+		C227AF78BC47F9317DC368A0 /* Pods-itunes-demo-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunes-demo-test.release.xcconfig"; path = "Target Support Files/Pods-itunes-demo-test/Pods-itunes-demo-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4239D1C610519A422C8D60 /* Pods_itunes_demo_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +56,7 @@
 				0822E48124BB67DB00E26789 /* itunes-demo-test */,
 				0822E48024BB67DB00E26789 /* Products */,
 				093F8532B3F82FEAA8406F18 /* Pods */,
+				85A179C1EA318DFC04DDA5C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,8 +89,18 @@
 		093F8532B3F82FEAA8406F18 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				57B3E74DC9D1F20FE4C15815 /* Pods-itunes-demo-test.debug.xcconfig */,
+				C227AF78BC47F9317DC368A0 /* Pods-itunes-demo-test.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		85A179C1EA318DFC04DDA5C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FEC250A2A4480AB89C2A669 /* Pods_itunes_demo_test.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0822E49324BB67DD00E26789 /* Build configuration list for PBXNativeTarget "itunes-demo-test" */;
 			buildPhases = (
+				2C75751DAE0B634B13512100 /* [CP] Check Pods Manifest.lock */,
 				0822E47B24BB67DB00E26789 /* Sources */,
 				0822E47C24BB67DB00E26789 /* Frameworks */,
 				0822E47D24BB67DB00E26789 /* Resources */,
+				FAD573B88F21502DE25CC0A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +171,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C75751DAE0B634B13512100 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-itunes-demo-test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAD573B88F21502DE25CC0A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itunes-demo-test/Pods-itunes-demo-test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-itunes-demo-test/Pods-itunes-demo-test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itunes-demo-test/Pods-itunes-demo-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0822E47B24BB67DB00E26789 /* Sources */ = {
@@ -306,6 +366,7 @@
 		};
 		0822E49424BB67DD00E26789 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57B3E74DC9D1F20FE4C15815 /* Pods-itunes-demo-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -324,6 +385,7 @@
 		};
 		0822E49524BB67DD00E26789 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C227AF78BC47F9317DC368A0 /* Pods-itunes-demo-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

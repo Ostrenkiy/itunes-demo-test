@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     
     var tracks: [Track] = []
     var tracksAPI: TracksAPI = TracksAPI()
-    
+    var query = ""
+    var cancellationToken: CancellationToken?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,12 +34,16 @@ class ViewController: UIViewController {
     }
     
     func refresh() {
-        tracks = tracksAPI.getTracks(query: "")
-        tableView.reloadData()
+        cancellationToken?()
+        cancellationToken = tracksAPI.getTracks(query: query) { [weak self] tracks in
+            self?.tracks = tracks
+            self?.tableView.reloadData()
+        }
     }
     
     func queryChanged(query: String) {
-        //TODO: Implement this
+        self.query = query
+        refresh()
     }
 }
 

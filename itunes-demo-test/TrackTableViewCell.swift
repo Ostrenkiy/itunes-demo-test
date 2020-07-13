@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class TrackTableViewCell: UITableViewCell {
     
@@ -26,7 +27,9 @@ class TrackTableViewCell: UITableViewCell {
     }
     
     func setupWith(track: Track) {
-        coverImageView.image = track.image
+        if let url = URL(string: track.imagePath) {
+            Nuke.loadImage(with: url, into: coverImageView)
+        }
         titleLabel.text = track.title
         artistLabel.text = track.artist
     }
